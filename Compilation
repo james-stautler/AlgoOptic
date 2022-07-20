@@ -1,0 +1,35 @@
+THE MAKE FILE IS ALREADY CREATED:
+
+To compile and link simply run:
+
+make
+
+Then run:
+
+./main
+
+To clear all output files:
+
+make clean
+
+TO CHANGE SETTINGS IN THE MAKE FILE:
+
+To compile the C++ file:
+
+g++ -c "filename.cpp"
+
+
+To link the file to corresponding libraries:
+
+g++ "filename.o" -o "filename" -lsfml-x
+
+where x can be system, graphics, window, audio, and/or network.
+
+For example:
+
+g++ main.o -o main -lsfml-graphics -lsfml-window -lsfml-system
+
+
+Finally, to run the program:
+
+./filename
