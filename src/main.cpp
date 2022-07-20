@@ -14,6 +14,7 @@ int main()
     while (window.isOpen()) 
     {
         sf::Event event;
+        bool data_displayed = false;
 
         while (window.pollEvent(event))
         {   
@@ -26,7 +27,19 @@ int main()
             {
                 Collection data;
                 data.Collection::display(window);
-            } 
+                data_displayed = true;
+            }
+
+            if (event.type == sf::Event::KeyPressed && data_displayed)
+            {
+                if (event.key.code == sf::Keyboard::Space)
+                {
+                    // place sorting and update function here
+                }
+            }
+            
+
+
         }
 
         
