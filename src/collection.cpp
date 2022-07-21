@@ -1,12 +1,15 @@
 #include "collection.h"
 
+const int BAR_WIDTH = 5;
+const int MAX_HEIGHT = 700;
+
 Collection::Collection()
 {
     for (int i = 0; i < 128; i++) 
     {
         Bar bar;
-        bar.setHeight(1 + (rand() % 700));
-        bar.setWidth(5);
+        bar.setHeight(1 + (rand() % MAX_HEIGHT));
+        bar.setWidth(BAR_WIDTH);
         bar.setX(10 * i);
         bar.setY(0);
         bar.setColor(sf::Color::White);
@@ -55,9 +58,9 @@ void Collection::bubbleSort(sf::RenderWindow& window, std::vector<sf::RectangleS
             if (rect[j].getSize().y >= rect[j + 1].getSize().y)
             {
                 int temp = rect[j].getSize().y;
-                sf::Vector2f size(5, rect[j + 1].getSize().y);
+                sf::Vector2f size(BAR_WIDTH, rect[j + 1].getSize().y);
                 rect[j].setSize(size);
-                sf::Vector2f size2(5, temp);
+                sf::Vector2f size2(BAR_WIDTH, temp);
                 rect[j + 1].setSize(size2);
             }
 
@@ -87,7 +90,7 @@ void Collection::insertionSort(sf::RenderWindow& window, std::vector<sf::Rectang
 
         while (j >= 0 && rect[j].getSize().y > key)
         {
-            sf::Vector2f size(5, rect[j].getSize().y);
+            sf::Vector2f size(BAR_WIDTH, rect[j].getSize().y);
             rect[j + 1].setSize(size);
             rect[j].setFillColor(sf::Color::Red);
             rect[j + 1].setFillColor(sf::Color::White);
@@ -103,7 +106,7 @@ void Collection::insertionSort(sf::RenderWindow& window, std::vector<sf::Rectang
             rect[j].setFillColor(sf::Color::White);
         }
 
-        sf::Vector2f size(5, key);
+        sf::Vector2f size(BAR_WIDTH, key);
         rect[j + 1].setSize(size);
         rect[j + 1].setFillColor(sf::Color::White);
         newDisplay(window, rect);
@@ -138,14 +141,14 @@ void Collection::merge(sf::RenderWindow& window, std::vector<sf::RectangleShape>
     {
         if (L[i] < R[j])
         {
-            sf::Vector2f size(5, L[i++]);
+            sf::Vector2f size(BAR_WIDTH, L[i++]);
             rect[k].setSize(size);
             rect[k].setFillColor(sf::Color::Red);
             newDisplay(window, rect);
             rect[k].setFillColor(sf::Color::White);
         } else
         {
-            sf::Vector2f size(5, R[j++]);
+            sf::Vector2f size(BAR_WIDTH, R[j++]);
             rect[k].setSize(size);
             rect[k].setFillColor(sf::Color::Red);
             newDisplay(window, rect);
@@ -156,7 +159,7 @@ void Collection::merge(sf::RenderWindow& window, std::vector<sf::RectangleShape>
 
     while (i < n1)
     {
-        sf::Vector2f size(5, L[i++]);
+        sf::Vector2f size(BAR_WIDTH, L[i++]);
         rect[k].setFillColor(sf::Color::Red);
         rect[k].setSize(size);
         newDisplay(window, rect);
@@ -165,7 +168,7 @@ void Collection::merge(sf::RenderWindow& window, std::vector<sf::RectangleShape>
 
     while (j < n2)
     {
-        sf::Vector2f size(5, R[j++]);
+        sf::Vector2f size(BAR_WIDTH, R[j++]);
         rect[k].setFillColor(sf::Color::Red);
         rect[k].setSize(size);
         newDisplay(window, rect);

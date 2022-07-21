@@ -36,6 +36,7 @@ int main()
         {   
             Collection data;
             std::vector<sf::RectangleShape> rectangles = data.convertRect();
+            window.setFramerateLimit(240);
 
             if (event.type == sf::Event::Closed)
             {
