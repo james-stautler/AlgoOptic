@@ -28,7 +28,6 @@ int main()
 
             if (event.type == sf::Event::MouseButtonPressed)
             {   
-
                 data.Collection::initial_display(window, rectangles);
             }
             
@@ -37,6 +36,13 @@ int main()
                 if (event.key.code == sf::Keyboard::Num1)
                 {
                     data.Collection::bubbleSort(window, rectangles);
+                    data.Collection::fillAll(rectangles);
+                    data.Collection::newDisplay(window, rectangles);
+                }
+
+                if (event.key.code == sf::Keyboard::Num2)
+                {
+                    data.Collection::insertionSort(window, rectangles);
                     data.Collection::fillAll(rectangles);
                     data.Collection::newDisplay(window, rectangles);
                 }

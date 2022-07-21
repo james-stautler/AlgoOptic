@@ -60,15 +60,40 @@ void Collection::bubbleSort(sf::RenderWindow& window, std::vector<sf::RectangleS
                 sf::Vector2f size2(5, temp);
                 rect[j + 1].setSize(size2);
             }
-            rect[j].setFillColor(sf::Color::White);
-            rect[j + 1].setFillColor(sf::Color::Red);
+
+            if (j == this->getQuantity() - i - 2)
+            {
+                rect[j].setFillColor(sf::Color::White);
+                rect[j + 1].setFillColor(sf::Color::White);
+            } else
+            {
+                rect[j].setFillColor(sf::Color::White);
+                rect[j + 1].setFillColor(sf::Color::Red);
+            }
+
         }
     }
 }
 
-void insertionSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect)
+void Collection::insertionSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect)
 {
+    for (int i = 1; i < rect.size(); i++)
+    {
+        int key = rect[i].getSize().y;
+        int j = i - 1;
 
+        while (j >= 0 && rect[j].getSize().y > key)
+        {
+            sf::Vector2f size(5, rect[j].getSize().y);
+            rect[j + 1].setSize(size);
+            j -= 1;
+            newDisplay(window, rect);
+        }
+
+        sf::Vector2f size(5, key);
+        rect[j + 1].setSize(size);
+        newDisplay(window, rect);
+    }
 }
 
 
