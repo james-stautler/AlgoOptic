@@ -82,16 +82,30 @@ void Collection::insertionSort(sf::RenderWindow& window, std::vector<sf::Rectang
         int key = rect[i].getSize().y;
         int j = i - 1;
 
+        rect[i].setFillColor(sf::Color::Red);
+        newDisplay(window, rect);
+
         while (j >= 0 && rect[j].getSize().y > key)
         {
             sf::Vector2f size(5, rect[j].getSize().y);
             rect[j + 1].setSize(size);
+            rect[j].setFillColor(sf::Color::Red);
+            rect[j + 1].setFillColor(sf::Color::White);
             j -= 1;
             newDisplay(window, rect);
         }
 
+        if (j < 0) 
+        {
+            rect[0].setFillColor(sf::Color::White);
+        } else
+        {
+            rect[j].setFillColor(sf::Color::White);
+        }
+
         sf::Vector2f size(5, key);
         rect[j + 1].setSize(size);
+        rect[j + 1].setFillColor(sf::Color::White);
         newDisplay(window, rect);
     }
 }

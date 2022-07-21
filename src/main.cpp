@@ -10,7 +10,7 @@ const int DISPLAY_WIDTH = 1280;
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(DISPLAY_WIDTH, DISPLAY_HEIGHT), "Window");
-    window.setFramerateLimit(240);
+    window.setFramerateLimit(60);
     
     while (window.isOpen()) 
     {
