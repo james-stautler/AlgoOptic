@@ -140,23 +140,36 @@ void Collection::merge(sf::RenderWindow& window, std::vector<sf::RectangleShape>
         {
             sf::Vector2f size(5, L[i++]);
             rect[k].setSize(size);
+            rect[k].setFillColor(sf::Color::Red);
+            newDisplay(window, rect);
+            rect[k].setFillColor(sf::Color::White);
         } else
         {
             sf::Vector2f size(5, R[j++]);
             rect[k].setSize(size);
+            rect[k].setFillColor(sf::Color::Red);
+            newDisplay(window, rect);
+            rect[k].setFillColor(sf::Color::White);
         }
     }
+
 
     while (i < n1)
     {
         sf::Vector2f size(5, L[i++]);
-        rect[k++].setSize(size);
+        rect[k].setFillColor(sf::Color::Red);
+        rect[k].setSize(size);
+        newDisplay(window, rect);
+        rect[k++].setFillColor(sf::Color::White);
     }
 
     while (j < n2)
     {
         sf::Vector2f size(5, R[j++]);
-        rect[k++].setSize(size);
+        rect[k].setFillColor(sf::Color::Red);
+        rect[k].setSize(size);
+        newDisplay(window, rect);
+        rect[k++].setFillColor(sf::Color::White);
     }
 
 
@@ -171,6 +184,7 @@ void Collection::mergeSort(sf::RenderWindow& window, std::vector<sf::RectangleSh
         mergeSort(window, rect, p, q);
         mergeSort(window, rect,  q + 1, r);
         merge(window, rect, p, q, r);
+        newDisplay(window, rect);
 
     }
 }
