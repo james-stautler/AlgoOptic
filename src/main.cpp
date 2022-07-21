@@ -47,6 +47,14 @@ int main()
                     data.Collection::newDisplay(window, rectangles);
                 }
 
+                if (event.key.code == sf::Keyboard::Num3)
+                {
+                    int length = rectangles.size();
+                    data.Collection::mergeSort(window, rectangles, 0, length - 1);
+                    data.Collection::fillAll(rectangles);
+                    data.Collection::newDisplay(window, rectangles);
+                }
+
             }
 
 

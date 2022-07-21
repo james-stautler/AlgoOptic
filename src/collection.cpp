@@ -111,6 +111,70 @@ void Collection::insertionSort(sf::RenderWindow& window, std::vector<sf::Rectang
 }
 
 
+void Collection::merge(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect, int p, int q, int r)
+{
+    int n1, n2;
+
+    n1 = q - p + 1;
+    n2 = r - q;
+
+    int L[n1], R[n2];
+
+    for (int i = 0; i < n1; i++)
+    {
+        L[i] = rect[p + i].getSize().y;
+    }
+
+    for (int j = 0; j < n2; j++)
+    {
+        R[j] = rect[q + j + 1].getSize().y;
+    }
+
+    int i = 0;
+    int j = 0;
+    int k = p;
+
+    for (k; i < n1 && j < n2; k++)
+    {
+        if (L[i] < R[j])
+        {
+            sf::Vector2f size(5, L[i++]);
+            rect[k].setSize(size);
+        } else
+        {
+            sf::Vector2f size(5, R[j++]);
+            rect[k].setSize(size);
+        }
+    }
+
+    while (i < n1)
+    {
+        sf::Vector2f size(5, L[i++]);
+        rect[k++].setSize(size);
+    }
+
+    while (j < n2)
+    {
+        sf::Vector2f size(5, R[j++]);
+        rect[k++].setSize(size);
+    }
+
+
+}
+
+void Collection::mergeSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect, int p, int r)
+{
+    int q;
+    if (p < r)
+    {
+        q = (p + r) / 2;
+        mergeSort(window, rect, p, q);
+        mergeSort(window, rect,  q + 1, r);
+        merge(window, rect, p, q, r);
+
+    }
+}
+
 std::vector<sf::RectangleShape> Collection::convertRect()
 {
     std::vector<sf::RectangleShape> rectangles;
