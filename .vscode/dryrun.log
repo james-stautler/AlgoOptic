@@ -1,8 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/james/Desktop/GitHub/AlgoOptic'
-g++ -c main.cpp 
-g++ -c bar.cpp bar.h
-g++ -c collection.cpp collection.h
-g++ main.o bar.o collection.o -o main -lsfml-graphics -lsfml-window -lsfml-system
 make: Leaving directory '/home/james/Desktop/GitHub/AlgoOptic'
  
+make: *** No targets specified and no makefile found.  Stop.
+

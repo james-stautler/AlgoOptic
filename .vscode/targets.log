@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 20 11:40:18 2022
+# Make data base, printed on Thu Jul 21 08:46:33 2022
 
 # Variables
 
@@ -60,8 +60,8 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-plasma:/etc/xdg
 SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile
+MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
 # environment
@@ -157,7 +157,7 @@ VSCODE_CODE_CACHE_PATH = /home/james/.config/Code/CachedData/3b889b090b5ad5793f5
 # environment
 LOGNAME = james
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -203,7 +203,7 @@ USER = james
 # environment
 SNAP_REVISION = 102
 # makefile
-.DEFAULT_GOAL := main
+.DEFAULT_GOAL := 
 # environment
 XDG_CURRENT_DESKTOP = KDE
 # automatic
@@ -279,14 +279,13 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 54624
+VSCODE_PID = 102420
 # environment
 _CE_CONDA = 
 # environment
 KDE_SESSION_UID = 1000
 # variable set hash-table stats:
- 
-# Load=136/1024=13%, Rehash=0, Collisions=20/161=12%
+# Load=136/1024=13%, Rehash=0, Collisions=20/158=13%
 
 # Pattern-specific Variable Values
 
@@ -294,9 +293,9 @@ KDE_SESSION_UID = 1000
 
 # Directories
 
-# . (device 66309, inode 8262133): 19 files, no impossibilities.
+# . (device 66309, inode 8262133): 7 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -312,29 +311,18 @@ all:
 #  File has not been updated.
 
 # Not a target:
-bar.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 11:40:04.727126003
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
 # Not a target:
-collection.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-main.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
@@ -342,55 +330,28 @@ main.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-bar.o: bar.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 9):
-	g++ -c bar.cpp bar.h
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
-	rm *.o main
-
-collection.o: collection.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 12):
-	g++ -c collection.cpp collection.h
-
-main: main.o bar.o collection.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 3):
-	g++ main.o bar.o collection.o -o main -lsfml-graphics -lsfml-window -lsfml-system
-
-main.o: main.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 6):
-	g++ -c main.cpp 
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/31=0%
+ 
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 223 B / avg = 8 B
-# current buf: size = 8162 B / used = 223 B / count = 25 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 15 / storage = 129 B / avg = 8 B
+# current buf: size = 8162 B / used = 129 B / count = 15 / avg = 8 B
 
-# strcache performance: lookups = 44 / hit rate = 43%
+# strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=5/44=11%
-# Finished Make data base on Wed Jul 20 11:40:18 2022
+# Load=15/8192=0%, Rehash=0, Collisions=1/18=6%
+# Finished Make data base on Thu Jul 21 08:46:33 2022
 
  
