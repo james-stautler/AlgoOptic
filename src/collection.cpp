@@ -44,7 +44,7 @@ void Collection::fillAll(std::vector<sf::RectangleShape>& rect)
     }
 }
 
-void Collection::bubbleSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect) // return sorted vector
+void Collection::bubbleSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect) 
 {
     for (int i = 0; i < this->getQuantity(); i++)
     {
@@ -64,6 +64,11 @@ void Collection::bubbleSort(sf::RenderWindow& window, std::vector<sf::RectangleS
             rect[j + 1].setFillColor(sf::Color::Red);
         }
     }
+}
+
+void insertionSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect)
+{
+
 }
 
 

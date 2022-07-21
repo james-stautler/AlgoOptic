@@ -14,6 +14,7 @@ class Collection {
         void initial_display(sf::RenderWindow& window, std::vector<sf::RectangleShape> rect);
         int getQuantity();
         void bubbleSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect);
+        void insertionSort(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect);
         void newDisplay(sf::RenderWindow& window, std::vector<sf::RectangleShape>& rect);
         void fillAll(std::vector<sf::RectangleShape>& rect);
         std::vector<sf::RectangleShape> convertRect();
