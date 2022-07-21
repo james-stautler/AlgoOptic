@@ -11,9 +11,25 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(DISPLAY_WIDTH, DISPLAY_HEIGHT), "Window");
     window.setFramerateLimit(60);
-    
+
+    sf::Font font;
+    if (!font.loadFromFile("../fonts/want_coffee/want-coffee.ttf"))
+    {
+        throw("COULD NOT LOAD FONT!");
+    }
+
+    sf::Text text;
+    text.setFont(font);
+    text.setCharacterSize(30);
+    text.setFillColor(sf::Color::White);
+    sf::Vector2f pos(50, 800);
+    text.setPosition(pos);
+    text.setString("CLICK THE MOUSE TO GENERATE NEW DATA SET\n\nPress 1 to perform bubble sort\n\nPress 2 to perform insertion sort\n\nPress 3 to perform merge sort");
+
     while (window.isOpen()) 
     {
+        window.draw(text);
+
         sf::Event event;
         
         while (window.pollEvent(event))
