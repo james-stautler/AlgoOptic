@@ -2,42 +2,47 @@
 #include "collection.h"
 #include "bar.h"
 
-const int DISPLAY_HEIGHT = 720;
+const int DISPLAY_HEIGHT = 1080;
 const int DISPLAY_WIDTH = 1280;
+
 
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(DISPLAY_WIDTH, DISPLAY_HEIGHT), "Window");
-    window.setFramerateLimit(60);
-
+    window.setFramerateLimit(240);
+    
     while (window.isOpen()) 
     {
         sf::Event event;
-        bool data_displayed = false;
-
+        
         while (window.pollEvent(event))
         {   
+            Collection data;
+            std::vector<sf::RectangleShape> rectangles = data.convertRect();
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
             }
 
             if (event.type == sf::Event::MouseButtonPressed)
-            {
-                Collection data;
-                data.Collection::display(window);
-                data_displayed = true;
-            }
+            {   
 
-            if (event.type == sf::Event::KeyPressed && data_displayed)
-            {
-                if (event.key.code == sf::Keyboard::Space)
-                {
-                    // place sorting and update function here
-                }
+                data.Collection::initial_display(window, rectangles);
             }
             
+            if (event.type == sf::Event::KeyPressed)
+            {
+                if (event.key.code == sf::Keyboard::Num1)
+                {
+                    data.Collection::bubbleSort(window, rectangles);
+                    data.Collection::fillAll(rectangles);
+                    data.Collection::newDisplay(window, rectangles);
+                }
+
+            }
+
 
 
         }
@@ -49,4 +54,6 @@ int main()
 
     return 0;
 }
+
+
 

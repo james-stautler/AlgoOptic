@@ -1,6 +1,6 @@
 
-main: main.o bar.o collection.o
-	g++ main.o bar.o collection.o -o main -lsfml-graphics -lsfml-window -lsfml-system
+main: bar.o collection.o main.o
+	g++ bar.o collection.o main.o -o main -lsfml-graphics -lsfml-window -lsfml-system
 
 main.o: main.cpp
 	g++ -c main.cpp 
